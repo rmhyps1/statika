@@ -14,7 +14,7 @@ class CreateDatabaseCommand extends Command
 
     public function handle()
     {
-        $database = env('DB_DATABASE', 'pklmagang');
+        $database = env('DB_DATABASE', 'statika');
         $host = env('DB_HOST', '127.0.0.1');
         $port = env('DB_PORT', '3306');
         $username = env('DB_USERNAME', 'root');

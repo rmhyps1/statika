@@ -1,6 +1,6 @@
-# Project PKL Magang - Laravel Application
+# Statika - Laravel Application
 
-Aplikasi sistem pengelolaan, visualisasi, dan sinkronisasi data DSSD (Daftar Standar Data) serta Kamasuta API Kabupaten Malang berbasis Laravel 11/13.
+Aplikasi sistem pengelolaan, visualisasi, dan sinkronisasi data DSSD (Daftar Standar Data) serta Kamasuta API Kabupaten Malang berbasis Laravel 13.
 
 ---
 
@@ -98,9 +98,8 @@ Jika Anda ingin menjalankan aplikasi tanpa perlu meng-install PHP, Composer, Nod
 
 1. Clone repository dan pindah ke direktori project:
    ```bash
-   git clone https://github.com/rmhyps1/pklmagang.git
-   cd pklmagang
-   git checkout latest-seluruh-kecamatan
+   git clone https://github.com/rmhyps1/statika.git
+   cd Statika
    ```
 
 2. Salin berkas lingkungan (.env):
@@ -133,9 +132,8 @@ Jika Anda ingin menjalankan project secara manual langsung pada sistem operasi A
 
 ### 1. Clone Repository & Masuk Direktori
 ```bash
-git clone https://github.com/rmhyps1/pklmagang.git
-cd pklmagang
-git checkout latest-seluruh-kecamatan
+git clone https://github.com/rmhyps1/statika.git
+cd Statika
 ```
 
 ### 2. Setup File Environment (.env) & Kredensial Database
@@ -155,7 +153,7 @@ Buka file `.env` baru tersebut menggunakan text editor, dan sesuaikan kredensial
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=pklmagang
+DB_DATABASE=statika
 DB_USERNAME=root
 DB_PASSWORD=your_password
 ```
@@ -201,7 +199,7 @@ Akses aplikasi melalui browser di http://127.0.0.1:8000.
 
 ### 1. Proses Setup Gagal Saat Membuat Database (Access Denied)
 - **Penyebab**: Username dan password MySQL di file `.env` salah, atau user tersebut tidak memiliki izin (privilege) untuk membuat database baru.
-- **Solusi**: Pastikan `DB_USERNAME` dan `DB_PASSWORD` di `.env` sudah benar. Jika menggunakan root tanpa password, kosongkan bagian password. Jika user MySQL Anda dibatasi, buat database kosong bernama `pklmagang` secara manual lewat phpMyAdmin/MySQL CLI, lalu jalankan kembali `composer run setup`.
+- **Solusi**: Pastikan `DB_USERNAME` dan `DB_PASSWORD` di `.env` sudah benar. Jika menggunakan root tanpa password, kosongkan bagian password. Jika user MySQL Anda dibatasi, buat database kosong bernama `statika` secara manual lewat phpMyAdmin/MySQL CLI, lalu jalankan kembali `composer run setup`.
 
 ### 2. Port is already allocated (Docker)
 - **Penyebab**: Port 8181, 8182, atau 3306 sudah digunakan oleh service lain di komputer Anda.
