@@ -1,0 +1,60 @@
+services:
+  app:
+    build: .
+    container_name: web
+    ports:
+      - "8181:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app/app
+      - ./bootstrap:/app/bootstrap
+      - ./config:/app/config
+      - ./database:/app/database
+      - ./public:/app/public
+      - ./resources:/app/resources
+      - ./routes:/app/routes
+      - ./storage:/app/storage
+      - ./tests:/app/tests
+      - ./.env:/app/.env
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.4
+    container_name: pklmagang-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1407
+      MYSQL_DATABASE: pklmagang
+      MYSQL_USER: magang
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p1407"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: pklmagang-phpmyadmin
+    ports:
+      - "8182:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: magang
+      PMA_PASSWORD: password
+      UPLOAD_LIMIT: 64M
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
