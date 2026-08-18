@@ -2,7 +2,7 @@
 
 ## Summary
 
-Deep dive cleanup of Laravel project `pklmagang`. Three categories of work: dead code removal, validation refactoring, and test coverage expansion.
+Deep dive cleanup of Laravel project `statika`. Three categories of work: dead code removal, validation refactoring, and test coverage expansion.
 
 ---
 

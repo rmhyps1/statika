@@ -115,7 +115,7 @@ Jika Anda ingin menjalankan aplikasi tanpa perlu meng-install PHP, Composer, Nod
 
 4. Akses Layanan:
    - **Aplikasi Web**: http://localhost:8181
-   - **phpMyAdmin**: http://localhost:8182 (Username: `magang`, Password: `password`)
+   - **phpMyAdmin**: http://localhost:8182 (Username: `statika`, Password: `password`)
 
 5. Perintah Operasional Docker:
    - **Melihat Status Container**: `docker compose ps`
